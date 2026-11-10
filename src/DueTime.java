@@ -51,7 +51,34 @@ public class DueTime implements Comparable<DueTime> {
      */
     @Override
     public int compareTo(DueTime other) {
-        throw new UnsupportedOperationException("TODO: implement DueTime.compareTo");
+
+        if (this.getMonth() > other.getMonth()) {
+            return 1;
+        } else if (this.getMonth() < other.getMonth()) {
+            return -1;
+        } else {
+            if (this.getDay() > other.getDay()) {
+                return 1;
+            } else if (this.getDay() < other.getDay()) {
+                return -1;
+            } else {
+                if (this.getHour() > other.getHour()) {
+                    return 1;
+                } else if (this.getHour() < other.getHour()) {
+                    return -1;
+                } else {
+                    if (this.getMinute() > other.getMinute()) {
+                        return 1;
+                    } else if (this.getMinute() < other.getMinute()) {
+                        return -1;
+                    } else {
+                        return 0;
+                    }
+                }
+            }
+        }
+
+        //throw new UnsupportedOperationException("TODO: implement DueTime.compareTo");
     }
 
     /** Prints like 11/12 6:30 PM. */

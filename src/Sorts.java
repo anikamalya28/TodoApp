@@ -34,7 +34,17 @@ public class Sorts {
      */
     public static boolean isSorted(Task[] a, String field) {
         // TODO
-        return false;
+        if (a.length == 0 || a.length == 1) {
+            return true;
+        }
+        boolean bob = true;
+        for (int i = 0; i < a.length-1; i++) {
+            if (less(a[i+1],a[i],field)) {
+                bob = false;
+                return bob;
+            }
+        }
+        return bob;
     }
 
     /**
@@ -46,6 +56,15 @@ public class Sorts {
      *   - Challenge: stop early if a whole pass makes no swaps.
      */
     public static void bubbleSort(Task[] a, String field) {
+        if (a.length > 1) {
+            for (int i = 0; i < a.length-1; i++) {
+                for (int k = 0; k < a.length-1-i; k++) {
+                    if (less(a[k+1],a[k],field)) {
+                        exchange(a, k+1, k);
+                    }
+                }
+            }
+        }
         // TODO
     }
 }
