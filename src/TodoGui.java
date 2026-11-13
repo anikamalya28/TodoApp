@@ -238,7 +238,7 @@ public class TodoGui extends JFrame {
     }
 
     public static void main(String[] args) {
-        String startFile = args.length > 0 ? args[0] : "tasks.txt";
+        String startFile = args.length > 0 ? args[0] : "task.txt";
         SwingUtilities.invokeLater(() -> new TodoGui(startFile).setVisible(true));
     }
 }
