@@ -19,6 +19,7 @@ public class Sorts {
         }
     }
 
+
     /** Provided: swap a[i] and a[j]. */
     public static void exchange(Task[] a, int i, int j) {
         Task swap = a[i];
