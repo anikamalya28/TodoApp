@@ -1,3 +1,5 @@
+import java.util.Comparator;
+
 /** Sorting utilities. Students finish isSorted and bubbleSort. */
 public class Sorts {
 
@@ -6,7 +8,8 @@ public class Sorts {
      * field is "difficulty", "completed", or "dueTime".
      * It uses the compareTo methods you finished in Difficulty, Completed, and DueTime.
      */
-    public static boolean less(Task v, Task w, String field) {
+    public static boolean less(Task v, Task w, Comparator<Task> c) {
+        /*
         switch (field) {
             case "difficulty":
                 return v.getDifficulty().compareTo(w.getDifficulty()) < 0;
@@ -17,6 +20,8 @@ public class Sorts {
             default:
                 throw new IllegalArgumentException("Unknown field: " + field);
         }
+        */
+        return c.compare(v,w) < 0;
     }
 
 
